@@ -9,6 +9,7 @@ export ZSH="/home/yue/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
+#ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,7 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python='python3'
+# alias python='python3'
+alias python='python2.7'
+alias pip='pip3'
 
 export LC_ALL=en_IS.UTF-8
 export LANG=en_US.UTF-8
@@ -105,3 +108,4 @@ export LANG=en_US.UTF-8
 LS_COLORS="ow=01;36:di=01;94:ln=04;33:*.py=01;33"
 export LS_COLORS
 
+# [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
