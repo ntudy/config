@@ -25,7 +25,7 @@ set autoread
 
 filetype indent on
 
-colorscheme murphy
+colorscheme molokai 
 
 " Press F5 to run python program
 map <F5> : call CompileRunGcc()<CR>
@@ -60,24 +60,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 Plugin 'https://github.com/bling/vim-airline'
 
-Plugin 'w0rp/ale'
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
-let g:ale_sign_column_always = 1
-let g:airline#extensions#ale#enabled = 1
+" Plugin 'w0rp/ale'
+" let g:ale_fix_on_save = 1
+" let g:ale_completion_enabled = 1
+" let g:ale_sign_column_always = 1
+" let g:airline#extensions#ale#enabled = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Change tab using alt + number
-:nn <M-1> 1gt
-:nn <M-2> 2gt
-:nn <M-3> 3gt
-:nn <M-4> 4gt
-:nn <M-5> 5gt
-:nn <M-6> 6gt
-:nn <M-7> 7gt
-:nn <M-8> 8gt
-:nn <M-9> 9gt
-:nn <M-0> :tablast<CR>

@@ -69,7 +69,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions autojump)
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
+autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias python='python3'
-alias python='python2.7'
+alias python='python3'
 alias pip='pip3'
 
 export LC_ALL=en_IS.UTF-8
@@ -108,4 +110,11 @@ export LANG=en_US.UTF-8
 LS_COLORS="ow=01;36:di=01;94:ln=04;33:*.py=01;33"
 export LS_COLORS
 
-# [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+# thefuck config
+# eval $(thefuck --alias fuck)
+
+# tldr config
+export PATH="$PATH:/home/yue/bin"
+export PATH="$PATH:/home/yue/.local/bin"
+
+eval $(thefuck --alias)
