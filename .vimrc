@@ -1,71 +1,28 @@
+set undolevels=1000     " Lots and lots of undo
+set history=50          " Size of :command history
+
+set number " show line Num.
+syntax enable
 syntax on
+set ts=4
+set expandtab " tab -> [space][space][space][space]
+set shiftwidth=4
+set smarttab
+set autoindent " do not use cindent
 
-set nocompatible
-set showmode
-set showcmd
-set mouse=a
-set encoding=utf-8
-set t_Co=256
-set nu
+set cursorline " for beauty
 
-set autoindent
-set expandtab
-set tabstop=4
-set softtabstop=4
-set cursorline
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1,utf-16
+set enc=utf8
+set fencs=utf8,gbk,gb2312,gb18030
 
-set hlsearch
-set showmatch
-set ignorecase
-set smartcase
 
-set noerrorbells
-set visualbell
-set autoread
+" make TAB and shift+TAB work in command mode
+nmap <tab> V>       
+nmap <s-tab> V<
+vmap <tab> >gv
+vmap <s-tab> <gv
 
-filetype indent on
+" can copy more lines across files
+set viminfo='20,<3000
 
-colorscheme molokai 
-
-" Press F5 to run python program
-map <F5> : call CompileRunGcc()<CR>
-func! CompileRunGcc()
-        exex "w"
-        if &filetype == 'c'
-                exec "!g++ % -o %<"
-                exec "!time ./%<"
-        elseif &filetype =='python'
-                exec "!clear"
-                exec "!time python3 %"
-        endif
-endfunc
-
-set nocompatible              " required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'https://github.com/scrooloose/nerdtree'
-nnoremap <F3> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-Plugin 'https://github.com/bling/vim-airline'
-
-" Plugin 'w0rp/ale'
-" let g:ale_fix_on_save = 1
-" let g:ale_completion_enabled = 1
-" let g:ale_sign_column_always = 1
-" let g:airline#extensions#ale#enabled = 1
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
